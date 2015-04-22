@@ -55,39 +55,37 @@ We don’t explicitly write the index anywhere. (show the index above each item 
 + ***Model and then have students create a new file in their development directories to hold their array practice code. Have students create their own array of their choice and assign it to a variable. Have students turn to partners and check with each other.***
 + Great. We’ve created the array. Now what if I just want to get out one item from the array instead of the whole thing. For example, What if I want to get the third item listed in my array?
 + We access items in an array using the brackets and the index of the thing you want.
-+ ***names[3] will give me what?*** (the fourth). how do I get the third item?
++ ***`names[3]` will give me what?*** (the fourth). how do I get the third item?
 So what if we want to change one of the items in the array? Any thoughts on how we can reassign/change an item?
-+ names[2] = “Joe” will change the third item in the array to Joe. (Model this)
++ `names[2] = “Joe”` will change the third item in the array to Joe. (Model this)
 + We can also add and remove items from an array. Arrays actually have methods built in to them. Remember that methods are just a set of instructions.
-	+ names.push(“Alfred”) will add an item with the contents of the argument to the end of the array it is called on. You can also use <<.
-	+ names.pop will remove the last item in an array.
-	+ names.delete_at(3) will delete the item at index 3.
-	+ names.insert(2, “Dan”) will insert the item at the index you specify in the first argument.
+	+ `names.push(“Alfred”)` will add an item with the contents of the argument to the end of the array it is called on. You can also use `<<`.
+	+ `names.pop` will remove the last item in an array.
+	+ `names.delete_at(3)` will delete the item at index 3.
+	+ `names.insert(2, “Dan”)` will insert the item at the index you specify in the first argument.
 + Here are some other cool methods: .length, .reverse, .sample, .sort.
 + ***Mini-Lab: Manipulating arrays (start with array and then have 10 instructions, what does array look like at the end?)***
-+ ***Answer: ["Peru", "Laos", "Chad", "Cuba", "Togo", "Iraq", "Iran", "Mali", "Oman", "Fiji"]*** 
++ ***Answer: `["Peru", "Laos", "Chad", "Cuba", "Togo", "Iraq", "Iran", "Mali", "Oman", "Fiji"]`*** 
 
 + Let’s make a new array but use numbers now. Get an example set from a student and make an integer based array. Ask a few review questions (add a number? index? etc…)
-+ Ok, what if we want to do something to each number. Like add one to each number. We could do it manually: + numbers[0] = numbers[0] +1, etc. We can also use a special method called .each that lets us take the same action on all of the items in an array.
++ Ok, what if we want to do something to each number. Like add one to each number. We could do it manually: + `numbers[0] = numbers[0] +1`, etc. We can also use a special method called `.each` that lets us take the same action on all of the items in an array.
 
 ```ruby
-numbers_plus_one = numbers.each do |number|
-	    		               number + 1
-			            end
+numbers.each do |number|
+	number + 1
+end
 ```
 
 + Explain the breakdown of the each method
-	+ needs a do and end
+	+ needs a `do` and `end`
 	+ content in the |pipes| is the item from the array that is being iterated through - it’s sort of like a placeholder, doesn’t really matter what it’s called but try to name it sensibly.
 	+ code is inside the do and end - this is what happens to each item.
-+ Let’s go back to our names example. ***Model using .each to output the names with “Our class has a student named #{name}”***
++ Let’s go back to our names example. ***Model using .each to output the names with “`Our class has a student named #{name}`”***
 + ***Mini-Lab - Iteration through arrays***
 
-***BREAK HERE FOR 2 HOUR CLASSES AND MOVE ON TO ARRAY LABS***
 
 + ***HASHES*** - Hashes are the second data type we’re going to talk about. (Use in real life, show a screenshot of a hash from an api call). Hashes give context to data (a bunch of birthdays without names means nothing), it’s a additional data dimension. They’re really similar to arrays in that they are like two column tables. The difference is that for an array the left side of the column is the index, for hashes there is no numbered index, but there is another piece of data on the left side of the table, called the key.
 
-***KEY***
 
 ```ruby
 VALUE
@@ -100,19 +98,19 @@ September 16”
 ```
 
 + We use hashes when we have a piece of data that should relate to another piece of data. We call this a key-value pair. The key in a hash has to be unique, because it’s how we access values from the hash. We write a hash like this:
-+ names_hash = { “Danny” => “December 3”, etc…
-+Now we don’t have indices, but we have keys. Given what we know about arrays, how do you think we’d access a value from a hash?
-	+ names_hash[“Danny”] returns “December 3”
++ `names_hash = { “Danny” => “December 3”}` etc…
++ Now we don’t have indices, but we have keys. Given what we know about arrays, how do you think we’d access a value from a hash?
+	+ 	`names_hash[“Danny”]` returns “December 3”
 + Knowing what we know about arrays, how would we change a key value pair’s value?
-	+ names_hash[“Victoria”] = “December 1”
+	+ `names_hash[“Victoria”]` = “December 1”
 + To add a new key-value pair we use the same syntax:
-names_hash[“Lyel”] = “April 1st”
-+ To delete we use .delete(“Lyel”) to remove the pair.
+	`names_hash[“Lyel”] = “April 1st”`
++ To delete we use `names_hash.delete(“Lyel”)` to remove the pair.
 + Sometimes we use a data type called a symbol for the key in a hash. Symbols are unique, which means that they can only exist once in ruby code, which is convenient because keys in a hash are unique. (CS - one to one/many relationships?) A symbol is made up of a colon (:) and a set of characters. ***Let’s create a new hash, but use symbols instead of strings for the keys.***
 + Methods to look at:
-	+ .values, .keys, .length, .include?
-+ Let’s learn about iteration in hashes, just like we did for arrays. For arrays we only wanted to loop through and do something to the value, but since a hash has a pair of data, we can use them both with .each. Say I want to print a string for each k-v pair that reads: “#{name} has a birthday on #{birth_date}.
-+ We do this with the .each method:
+	+ `.values`, `.keys`, `.length`, `.include?`
++ Let’s learn about iteration in hashes, just like we did for arrays. For arrays we only wanted to loop through and do something to the value, but since a hash has a pair of data, we can use them both with .each. Say I want to print a string for each k-v pair that reads: `“#{name} has a birthday on #{birth_date}.`
++ We do this with the `.each` method:
 
 ```ruby
 names_hash.each do |key, value|
@@ -123,7 +121,7 @@ names_hash.each do |key, value|
 + We can replace the key and value placeholders with anything we want, these are just placeholders. Just remember that the first one is for the key and the second is always representing the value.
 + ***Iteration with hashes Mini-Lab***
 + Hashes and Arrays can occur inside of other hashes and arrays. How do we pull individual items out if this is the case?
-	+ salad_ingredients =[[“romaine”, “kale”, “spring mix”],[“tomatoes”, “avocado”, “beets”],[“vinaigrette”, “ranch”, “ginger-soy”]]
+	+ `salad_ingredients =[[“romaine”, “kale”, “spring mix”],[“tomatoes”, “avocado”, “beets”],[“vinaigrette”, “ranch”, “ginger-soy”]]`
 	+ ***Prompt students through finding individual items.***
 	+ This data would be much better represented as a hash (explain why). ***Can you help me convert it?***
 
@@ -141,5 +139,7 @@ salad_ingredients ={ :lettuce => [“romaine”, “kale”, “spring mix”],
 	+ define a method that returns the first item from an array.
 
 ### Conclusion
+Arrays and hashes are incredible important data structures that allow us organize our data into manageable chunks. You will literally never escape them
 
 #### Hints and Hurdles 
++ Students confuse the `[]` notation for arrays and hashes with `()` used in method arguments.
