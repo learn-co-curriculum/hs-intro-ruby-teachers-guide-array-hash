@@ -143,3 +143,4 @@ Arrays and hashes are incredible important data structures that allow us organiz
 
 #### Hints and Hurdles 
 + Students confuse the `[]` notation for arrays and hashes with `()` used in method arguments.
+<a href='https://learn.co/lessons/hs-intro-ruby-teachers-guide-array-hash' data-visibility='hidden'>View this lesson on Learn.co</a>
